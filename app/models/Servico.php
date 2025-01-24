@@ -20,11 +20,11 @@ class Servico extends Model
     {
 
         $sql = "SELECT s.nome_servico, g.foto_galeria, s.descricao_servico, s.preco_base_servico, s.tempo_estimado_servico, s.id_especialidade, e.nome_especialidade FROM tbl_gabrielm_galeria as g
- inner join tbl_gabrielm_servico as s
- on g.id_servico = s.id_servico
- inner join tbl_gabrielm_especialidade as e
- on s.id_especialidade = e.id_especialidade
- WHERE status_galeria = 'ativo';";
+                inner join tbl_gabrielm_servico as s
+                on g.id_servico = s.id_servico
+                inner join tbl_gabrielm_especialidade as e
+                on s.id_especialidade = e.id_especialidade
+                WHERE status_galeria = 'ativo';";
 
         $stmt = $this->db->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -113,32 +113,34 @@ class Servico extends Model
 
     }
 
-    public function existeEsseServico($link){
-        $sql= "select count(*) as total from tbl_gabrielm_servico where link_servico = :link";
+    public function existeEsseServico($link)
+    {
+        $sql = "select count(*) as total from tbl_gabrielm_servico where link_servico = :link";
         $stmt = $this->db->prepare($sql);
         $stmt->bindValue(':link', $link);
         $stmt->execute();
-        
+
         $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
-        
+
         return $resultado['total'] > 0;
     }
 
     public function addFotoGaleria($id_servico, $arquivo, $nome_servico)
     {
         $sql = "INSERT INTO  tbl_gabrielm_galeria (foto_galeria, alt_galeria, status_galeria, id_servico) VALUES(:foto_galeria, :alt_galeria, :status_galeria, :id_servico)";
-        $stmt= $this->db->prepare($sql);
+        $stmt = $this->db->prepare($sql);
         $stmt->bindValue(':foto_galeria', $arquivo);
         $stmt->bindValue(':alt_galeria', $nome_servico);
         $stmt->bindValue(':status_galeria', 'Ativo');
         $stmt->bindValue(':id_servico0', $id_servico);
     }
 
-    public function obterOuCriarEspecialidade($nome){
-        $sql= "INSERT INTO tbl_gabrielm_especialidade (nome_especialidade) VALUES (:nome)";
+    public function obterOuCriarEspecialidade($nome)
+    {
+        $sql = "INSERT INTO tbl_gabrielm_especialidade (nome_especialidade) VALUES (:nome)";
         $stmt = $this->db->prepare($sql);
         $stmt->bindValue(':nome', $nome);
-        if($stmt->execute()){
+        if ($stmt->execute()) {
             return $this->db->lastInsetId();
         }
         return false;

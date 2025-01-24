@@ -1,3 +1,5 @@
+<a href="http://localhost/kioficina/public/servicos/adicionar" class="btn btn-primary">Adicionar Serviço</a>
+
 <table class="table table-hover">
     <thead>
         <tr>
