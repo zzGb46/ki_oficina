@@ -167,7 +167,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                <a href="http://localhost/kioficina/public/clientes/listar" class="nav-link">
                                         <i class="bi bi-person nav-icon"></i>
                                         <p>Clientes</p>
                                     </a>

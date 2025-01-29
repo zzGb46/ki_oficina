@@ -14,7 +14,7 @@
                 <!-- FORMULÁRIO DE CADASTRO -->
 
                 <div class="form-group mt-3">
-                    <label for="nome_servico">Nome do Serviço:</label>
+                    <label for="nome_servico">Nome do cliente:</label>
                     <input type="text" class="form-control" name="nome_servico" id="nome_servico" required>
                 </div>
 
