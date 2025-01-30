@@ -1,4 +1,4 @@
-<form method="POST" action="http://localhost/kioficina/public/servicos/adicionar" enctype="multipart/form-data">
+<form method="POST" action="http://localhost/kioficina/public/clientes/adicionar" enctype="multipart/form-data">
     <div class="container-fluid">
         <div class="row">
             <div class="col-3">

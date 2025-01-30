@@ -1,4 +1,4 @@
-<a href="http://localhost/kioficina/public/cliente/adicionar" class="btn btn-primary">Adicionar Serviço</a>
+<a href="http://localhost/kioficina/public/clientes/adicionar" class="btn btn-primary">Cadastrar Cliente</a>
 
 <table class="table table-hover">
     <thead>
