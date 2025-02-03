@@ -19,12 +19,12 @@ class Servico extends Model
     public function getTodosServicos()
     {
 
-        $sql = "SELECT s.nome_servico, g.foto_galeria, s.descricao_servico, s.preco_base_servico, s.tempo_estimado_servico, s.id_especialidade, e.nome_especialidade FROM tbl_gabrielm_galeria as g
+        $sql = "SELECT s.*, g.foto_galeria, e.nome_especialidade FROM tbl_gabrielm_galeria as g
                 inner join tbl_gabrielm_servico as s
                 on g.id_servico = s.id_servico
                 inner join tbl_gabrielm_especialidade as e
                 on s.id_especialidade = e.id_especialidade
-                WHERE status_galeria = 'ativo';";
+                WHERE status_galeria = 'ativo'";
 
         $stmt = $this->db->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -111,6 +111,25 @@ class Servico extends Model
 
         return $this->db->lastInsetId();
 
+    }
+
+
+    //Método para buscar os dados do Serviço de acordo com o ID
+    public function getServicoById($id)
+    {
+        $sql = "SELECT s.*, g.foto_galeria, e.nome_especialidade
+from tbl_gabrielm_servico as s
+left join tbl_gabrielm_galeria as g
+on s.id_servico = g.id_galeria
+inner join tbl_gabrielm_especialidade as e 
+on s.id_servico = e.id_especialidade
+ where s.id_servico= :id_servico
+ limit 1";
+
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindValue(':id_servico', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     public function existeEsseServico($link)

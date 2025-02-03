@@ -34,7 +34,7 @@
                 <td><?php echo $linha['tempo_estimado_servico'] ?></td>
                 <td><?php echo $linha['nome_especialidade'] ?></td>
                 <td>
-                    <a href="http://localhost/kioficina/public/servicos/listar/" title="Editar">
+                    <a href="http://localhost/kioficina/public/servicos/editar/<?php echo $linha['id_servico']?>" title="Editar">
                         <img src="http://localhost/kioficina/public/uploads/pencil.png" alt="Editar" style="width: 20px; height: auto;">
                     </a>
                 </td>
