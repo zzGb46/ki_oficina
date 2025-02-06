@@ -113,6 +113,38 @@ class Servico extends Model
 
     }
 
+    public function atualizarServico($id, $dados){
+        
+            $sql = "UPDATE servicos SET 
+                        id_especialidade = :id_especialidade,
+                        nome_servico = :nome_servico,
+                        descricao_servico = :descricao_servico,
+                        preco_base_servico = :preco_base_servico,
+                        tempo_estimado_servico = :tempo_estimado_servico,
+                        alt_foto_servico = :alt_foto_servico,
+                        status_servico = :status_servico,
+                        link_servico = :link_servico,
+                        id_galeria = :id_galeria
+                    WHERE id_servico = :id_servico";
+        
+            $stmt = $this->db->prepare($sql);
+        
+            $stmt->bindParam(':id_servico', $dados['id_servico']);
+            $stmt->bindParam(':id_especialidade', $dados['id_especialidade']);
+            $stmt->bindParam(':nome_servico', $dados['nome_servico']);
+            $stmt->bindParam(':descricao_servico', $dados['descricao_servico']);
+            $stmt->bindParam(':preco_base_servico', $dados['preco_base_servico']);
+            $stmt->bindParam(':tempo_estimado_servico', $dados['tempo_estimado_servico']);
+            $stmt->bindParam(':alt_foto_servico', $dados['alt_foto_servico']);
+            $stmt->bindParam(':status_servico', $dados['status_servico']);
+            $stmt->bindParam(':link_servico', $dados['link_servico']);
+            $stmt->bindParam(':id_galeria', $id, PDO::PARAM_INT);
+        
+            $resultado = $stmt->execute();
+
+            return $resultado;
+        
+    }
 
     //Método para buscar os dados do Serviço de acordo com o ID
     public function getServicoById($id)
@@ -154,6 +186,39 @@ on s.id_servico = e.id_especialidade
         $stmt->bindValue(':id_servico0', $id_servico);
     }
 
+    public function atualizarFotoGaleria($id, $arquivo, $alt_servico){
+        //verificar se exite
+        $sqlVerificar= "SELECT id_galeria from tbl_gabrielm_galeria where id_servico = :id";
+        $stmtVerificar= $this->db->prepare($sqlVerificar);
+        $stmtVerificar->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmtVerificar->execute();
+        $galeria= $stmtVerificar->fetch(PDO::FETCH_ASSOC);
+
+        if($galeria){
+            //Já existe a foto.... faça um UPDATE
+            $sql= "UPDATE tbl_gabrielm_galeria set foto_galeria=:foto_galeria,
+                                            alt_galeria= :alt_galeria,
+                                                   status_galeria= :status_galeria
+                   where id_galeria= :id_galeria";
+            $stmt= $this->db->prepare($sql);
+            $stmt->bindValue('foto_galeria', $arquivo);
+            $stmt->bindValue('alt_galeria', $alt_servico);
+            $stmt->bindValue('status_galeria', 'ativo');
+            $stmt->bindValue('id_galeria', $galeria['id_galeria']);
+            return $stmt->execute();
+
+        }else{
+             $sql = "INSERT INTO  tbl_gabrielm_galeria (foto_galeria, alt_galeria, status_galeria, id_servico) VALUES(:foto_galeria, :alt_galeria, :status_galeria, :id_servico)";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindValue(':foto_galeria', $arquivo);
+        $stmt->bindValue(':alt_galeria', $alt_servico);
+        $stmt->bindValue(':status_galeria', 'Ativo');
+        $stmt->bindValue(':id_servico0', $id);
+    }
+
+    
+    }
+
     public function obterOuCriarEspecialidade($nome)
     {
         $sql = "INSERT INTO tbl_gabrielm_especialidade (nome_especialidade) VALUES (:nome)";
@@ -164,6 +229,16 @@ on s.id_servico = e.id_especialidade
         }
         return false;
     }
+
+
+    public function desativarServico($id){
+        $sql= "UPDATE tbl_gabrielm_servico set status_servico = 'Inativo' WHERE id_servico = id_servico";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindValue(':id_servico', $id, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+
+
 
 
 

@@ -7,27 +7,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="KiOficina Excelência em Serviços Automotivos | Dashboard">
     <meta name="author" content="Alessandro Palmeira">
-    <meta name="description" content="Na Ki Oficina, nos dedicamos a oferecer serviços automotivos de alta qualidade para garantir a segurança e satisfação dos nossos clientes. Nossa equipe de especialistas utiliza as mais modernas ferramentas e técnicas para manter seu veículo em perfeito estado, proporcionando tranquilidade e confiança a cada visita">
-    <meta name="keywords" content="oficina mecânica, manutenção automotiva, reparação de veículos, revisão de carros, diagnóstico automotivo, troca de óleo, alinhamento e balanceamento, reparação elétrica automotiva, troca de pneus, serviço de freios, suspensão automotiva, injeção eletrônica, profissionais qualificados, atendimento personalizado, soluções eficientes, segurança veicular, satisfação do cliente, oficina mecânica [Cidade], serviços automotivos [Região], peças automotivas, acessórios para carros, serviços rápidos, atendimento online, agendamento de serviços">
+    <meta name="description"
+        content="Na Ki Oficina, nos dedicamos a oferecer serviços automotivos de alta qualidade para garantir a segurança e satisfação dos nossos clientes. Nossa equipe de especialistas utiliza as mais modernas ferramentas e técnicas para manter seu veículo em perfeito estado, proporcionando tranquilidade e confiança a cada visita">
+    <meta name="keywords"
+        content="oficina mecânica, manutenção automotiva, reparação de veículos, revisão de carros, diagnóstico automotivo, troca de óleo, alinhamento e balanceamento, reparação elétrica automotiva, troca de pneus, serviço de freios, suspensão automotiva, injeção eletrônica, profissionais qualificados, atendimento personalizado, soluções eficientes, segurança veicular, satisfação do cliente, oficina mecânica [Cidade], serviços automotivos [Região], peças automotivas, acessórios para carros, serviços rápidos, atendimento online, agendamento de serviços">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css" integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"
+        integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q=" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/styles/overlayscrollbars.min.css" integrity="sha256-dSokZseQNT08wYEWiz5iLI8QPlKxG+TswNRD8k35cpg=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/styles/overlayscrollbars.min.css"
+        integrity="sha256-dSokZseQNT08wYEWiz5iLI8QPlKxG+TswNRD8k35cpg=" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css" integrity="sha256-Qsx5lrStHZyR9REqhUF8iQt73X06c8LGIUPzpOhwRrI=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css"
+        integrity="sha256-Qsx5lrStHZyR9REqhUF8iQt73X06c8LGIUPzpOhwRrI=" crossorigin="anonymous">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 
     <link rel="stylesheet" href="http://localhost/kioficina/public/vendors/dash/css/adminlte.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
     <link rel="stylesheet" href="http://localhost/kioficina/public/assets/css/dash.css">
-    
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css" integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0=" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css" integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css"
+        integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0=" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css"
+        integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4=" crossorigin="anonymous">
 </head>
 
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
@@ -43,7 +50,8 @@
                             <i class="bi bi-list"></i>
                         </a>
                     </li>
-                    <li class="nav-item d-none d-md-block"> <a href="<?php BASE_URL; ?>" class="nav-link">Site Ki Oficina</a> </li>
+                    <li class="nav-item d-none d-md-block"> <a href="<?php BASE_URL; ?>" class="nav-link">Site Ki
+                            Oficina</a> </li>
                 </ul>
 
                 <ul class="navbar-nav ms-auto">
@@ -59,35 +67,37 @@
                     <li class="nav-item dropdown user-menu">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img src="<?php
-                                        $caminhoArquivo = $_SERVER['DOCUMENT_ROOT'] . "/kioficina/public/uploads/" . $func['foto_funcionario'];
+                            $caminhoArquivo = $_SERVER['DOCUMENT_ROOT'] . "/kioficina/public/uploads/" . $func['foto_funcionario'];
 
-                                        if ($func['foto_funcionario'] != "") {
-                                            if (file_exists($caminhoArquivo)) {
-                                                echo ("http://localhost/kioficina/public/uploads/" . htmlspecialchars($func['foto_funcionario'], ENT_QUOTES, 'UTF-8'));
-                                            } else {
-                                                echo ("http://localhost/kioficina/public/uploads/sem-foto-servico.png");
-                                            }
-                                        } else {
-                                            echo ("http://localhost/kioficina/public/uploads/sem-foto-servico.png");
-                                        }
-                                        ?>" class="user-image rounded-circle shadow" alt="<?php echo $func['nome_funcionario']; ?>">
+                            if ($func['foto_funcionario'] != "") {
+                                if (file_exists($caminhoArquivo)) {
+                                    echo ("http://localhost/kioficina/public/uploads/" . htmlspecialchars($func['foto_funcionario'], ENT_QUOTES, 'UTF-8'));
+                                } else {
+                                    echo ("http://localhost/kioficina/public/uploads/sem-foto-servico.png");
+                                }
+                            } else {
+                                echo ("http://localhost/kioficina/public/uploads/sem-foto-servico.png");
+                            }
+                            ?>" class="user-image rounded-circle shadow"
+                                alt="<?php echo $func['nome_funcionario']; ?>">
                             <span class="d-none d-md-inline"><?php echo $func['nome_funcionario']; ?></span>
                         </a>
 
                         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
                             <li class="user-header text-bg-primary"> <img src="<?php
-                                                                                $caminhoArquivo = $_SERVER['DOCUMENT_ROOT'] . "/kioficina/public/uploads/" . $func['foto_funcionario'];
+                            $caminhoArquivo = $_SERVER['DOCUMENT_ROOT'] . "/kioficina/public/uploads/" . $func['foto_funcionario'];
 
-                                                                                if ($func['foto_funcionario'] != "") {
-                                                                                    if (file_exists($caminhoArquivo)) {
-                                                                                        echo ("http://localhost/kioficina/public/uploads/" . htmlspecialchars($func['foto_funcionario'], ENT_QUOTES, 'UTF-8'));
-                                                                                    } else {
-                                                                                        echo ("http://localhost/kioficina/public/uploads/sem-foto-servico.png");
-                                                                                    }
-                                                                                } else {
-                                                                                    echo ("http://localhost/kioficina/public/uploads/sem-foto-servico.png");
-                                                                                }
-                                                                                ?>" class="user-image rounded-circle shadow" alt="<?php echo $func['nome_funcionario']; ?>">
+                            if ($func['foto_funcionario'] != "") {
+                                if (file_exists($caminhoArquivo)) {
+                                    echo ("http://localhost/kioficina/public/uploads/" . htmlspecialchars($func['foto_funcionario'], ENT_QUOTES, 'UTF-8'));
+                                } else {
+                                    echo ("http://localhost/kioficina/public/uploads/sem-foto-servico.png");
+                                }
+                            } else {
+                                echo ("http://localhost/kioficina/public/uploads/sem-foto-servico.png");
+                            }
+                            ?>" class="user-image rounded-circle shadow"
+                                    alt="<?php echo $func['nome_funcionario']; ?>">
                                 <p>
                                     <?php echo $func['nome_funcionario'] . " - " . $func['cargo_funcionario']; ?>
                                     <small><?php echo $func['endereco_funcionario'] . " - " . $func['telefone_funcionario']; ?></small>
@@ -95,7 +105,8 @@
                             </li>
                             <li class="user-footer">
                                 <a href="<?php BASE_URL; ?>" class="btn btn-default btn-flat">Perfil</a>
-                                <a href="http://localhost/kioficina/public/auth/sair" class="btn btn-default btn-flat float-end">Sair</a>
+                                <a href="http://localhost/kioficina/public/auth/sair"
+                                    class="btn btn-default btn-flat float-end">Sair</a>
                             </li>
                         </ul>
                     </li>
@@ -109,13 +120,15 @@
 
             <div class="sidebar-brand">
                 <a href="./index.html" class="brand-link">
-                    <img src="http://localhost/kioficina/public/assets/img/logo-kioficina.png" alt="KiOficina Logo" class="brand-image opacity-75 logo-kioficina">
+                    <img src="http://localhost/kioficina/public/assets/img/logo-kioficina.png" alt="KiOficina Logo"
+                        class="brand-image opacity-75 logo-kioficina">
                 </a>
             </div>
 
             <div class="sidebar-wrapper">
                 <nav class="mt-2">
-                    <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
+                    <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu"
+                        data-accordion="false">
 
                         <!-- Dashboard Principal -->
                         <li class="nav-item">
@@ -167,7 +180,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                <a href="http://localhost/kioficina/public/clientes/listar" class="nav-link">
+                                    <a href="http://localhost/kioficina/public/clientes/listar" class="nav-link">
                                         <i class="bi bi-person nav-icon"></i>
                                         <p>Clientes</p>
                                     </a>
@@ -296,9 +309,13 @@
                                 <div class="inner">
                                     <h3>150</h3>
                                     <p>New Orders</p>
-                                </div> <svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z"></path>
-                                </svg> <a href="#" class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">
+                                </div> <svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path
+                                        d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z">
+                                    </path>
+                                </svg> <a href="#"
+                                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">
                                     More info <i class="bi bi-link-45deg"></i> </a>
                             </div>
                         </div>
@@ -308,9 +325,13 @@
                                 <div class="inner">
                                     <h3>53<sup class="fs-5">%</sup></h3>
                                     <p>Bounce Rate</p>
-                                </div> <svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75zM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 01-1.875-1.875V8.625zM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 013 19.875v-6.75z"></path>
-                                </svg> <a href="#" class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">
+                                </div> <svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path
+                                        d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75zM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 01-1.875-1.875V8.625zM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 013 19.875v-6.75z">
+                                    </path>
+                                </svg> <a href="#"
+                                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">
                                     More info <i class="bi bi-link-45deg"></i> </a>
                             </div>
                         </div>
@@ -320,9 +341,13 @@
                                 <div class="inner">
                                     <h3>44</h3>
                                     <p>User Registrations</p>
-                                </div> <svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z"></path>
-                                </svg> <a href="#" class="small-box-footer link-dark link-underline-opacity-0 link-underline-opacity-50-hover">
+                                </div> <svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path
+                                        d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z">
+                                    </path>
+                                </svg> <a href="#"
+                                    class="small-box-footer link-dark link-underline-opacity-0 link-underline-opacity-50-hover">
                                     More info <i class="bi bi-link-45deg"></i> </a>
                             </div>
                         </div>
@@ -332,10 +357,16 @@
                                 <div class="inner">
                                     <h3>65</h3>
                                     <p>Unique Visitors</p>
-                                </div> <svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path clip-rule="evenodd" fill-rule="evenodd" d="M2.25 13.5a8.25 8.25 0 018.25-8.25.75.75 0 01.75.75v6.75H18a.75.75 0 01.75.75 8.25 8.25 0 01-16.5 0z"></path>
-                                    <path clip-rule="evenodd" fill-rule="evenodd" d="M12.75 3a.75.75 0 01.75-.75 8.25 8.25 0 018.25 8.25.75.75 0 01-.75.75h-7.5a.75.75 0 01-.75-.75V3z"></path>
-                                </svg> <a href="#" class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">
+                                </div> <svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path clip-rule="evenodd" fill-rule="evenodd"
+                                        d="M2.25 13.5a8.25 8.25 0 018.25-8.25.75.75 0 01.75.75v6.75H18a.75.75 0 01.75.75 8.25 8.25 0 01-16.5 0z">
+                                    </path>
+                                    <path clip-rule="evenodd" fill-rule="evenodd"
+                                        d="M12.75 3a.75.75 0 01.75-.75 8.25 8.25 0 018.25 8.25.75.75 0 01-.75.75h-7.5a.75.75 0 01-.75-.75V3z">
+                                    </path>
+                                </svg> <a href="#"
+                                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">
                                     More info <i class="bi bi-link-45deg"></i> </a>
                             </div>
                         </div>
@@ -346,9 +377,9 @@
                         <!-- Conteúdo -->
                         <?php
 
-                        if(isset($conteudo)){
+                        if (isset($conteudo)) {
                             $this->carregarViews($conteudo, $dados);
-                        }else{
+                        } else {
                             echo ' <h2> Bem-vindo ao Dashboard! </h2>';
                         }
 
@@ -368,7 +399,8 @@
                     <!-- Seção de Informações da Empresa -->
                     <div class="col-md-4">
                         <h5>Ki Oficina</h5>
-                        <p>Oferecemos serviços automotivos de excelência para garantir a segurança e satisfação do seu veículo.</p>
+                        <p>Oferecemos serviços automotivos de excelência para garantir a segurança e satisfação do seu
+                            veículo.</p>
                     </div>
 
                     <!-- Seção de Links Úteis -->
@@ -397,9 +429,12 @@
                     </div>
                     <div class="col-md-6 text-md-end">
                         <div class="social-icons">
-                            <a href="https://facebook.com/kioficina" class="text-white me-2" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://instagram.com/kioficina" class="text-white me-2" target="_blank"><i class="fab fa-instagram"></i></a>
-                            <a href="https://linkedin.com/company/kioficina" class="text-white" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://facebook.com/kioficina" class="text-white me-2" target="_blank"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="https://instagram.com/kioficina" class="text-white me-2" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://linkedin.com/company/kioficina" class="text-white" target="_blank"><i
+                                    class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
@@ -407,26 +442,99 @@
         </footer>
 
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/browser/overlayscrollbars.browser.es6.min.js" integrity="sha256-H2VM7BKda+v2Z4+DRy69uknwxjyDRhszjXFhsL4gD3w=" crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha256-YMa+wAM6QkVyz999odX7lPRxkoYAan8suedu4k2Zur8=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/browser/overlayscrollbars.browser.es6.min.js"
+        integrity="sha256-H2VM7BKda+v2Z4+DRy69uknwxjyDRhszjXFhsL4gD3w=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha256-YMa+wAM6QkVyz999odX7lPRxkoYAan8suedu4k2Zur8=" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 
     <script src="http://localhost/kioficina/public/vendors/dash/js/adminlte.js"></script>
-    
-
-
-  
 
 
 
- 
+    <script>
 
-   
+
+        function abrirModelDesativar(idServico) {
+
+
+            if ($('modalDesativar').hasClass('show')) {
+                return;
+            }
+
+            document.getElementById('idServicoDesativar').value = idServico;
+
+            $('#modalDesativar').modal('show');
+        }
+
+
+
+        document.getElementById('btnConfirmar').addEventListener('click'), function () {
+            const idServico = document.getElementById('idServicoDesativar').value;
+            // console.log(idServico);
+        }
+
+        if (idServico) {
+            desativarServico(idServico);
+        }
+
+        function desativarServico(idServico) {
+
+            fetch(`http://localhost/kioficina/public/servicos/desativar/${idServico}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+
+                .then(response => {
+                    //Se o código de resposta NÃO for ok, lança um erro
+                    if (!response.ok) {
+                        throw new Error(`Erro HTTP: ${response.status}`);
+                        console.log("ERRO -")
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    //Se a resposta do servidor for OK, fecha o modal e carrega e atualiza a lista
+                    
+                    if(data.sucesso){
+                        console.log("Serviço desativado com sucesso")
+                        ${'#modalDesativar'}.modal('hide');
+                        setTimeout(()=>{
+                            location.reload();
+                        }), 500;
+                    }else{
+                        alert(data.mensagem || "Ocorreu um erro ao desativar o serviço");
+                    }
+
+                })
+
+                .catch(erro =>{
+                    console.error('Erro', erro);
+                    alert("Erro na requisição.")
+                })
+
+        }
+
+
+    </script>
+
+
+
+
+
 </body>
 
 

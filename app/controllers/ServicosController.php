@@ -188,6 +188,74 @@ class ServicosController extends Controller
     public function editar($id = null)
     {
         $dados = array();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+            //Os dados do input $POST['nome_servico']
+
+            /** TBL SERVICO */
+            $nome_servico = filter_input(INPUT_POST, 'nome_servico', FILTER_SANITIZE_SPECIAL_CHARS);
+            $descricao_servico = filter_input(INPUT_POST, 'descricao_servico', FILTER_SANITIZE_SPECIAL_CHARS);
+            $preco_base_servico = filter_input(INPUT_POST, 'preco_base_servico', FILTER_SANITIZE_NUMBER_FLOAT);
+            $tempo_estimado_servico = filter_input(INPUT_POST, 'tempo_estimado_servico');
+            $alt_foto_servico               = $nome_servico;
+            $id_especialidade = filter_input(INPUT_POST, 'id_especialidade', FILTER_SANITIZE_NUMBER_INT);
+            $status_servico = filter_input(INPUT_POST, 'status_servico', FILTER_SANITIZE_SPECIAL_CHARS);
+
+            $nova_especialidade = filter_input(INPUT_POST, 'nova_especialidade', FILTER_SANITIZE_SPECIAL_CHARS);
+
+
+
+
+
+            if ($nome_servico && $descricao_servico && $preco_base_servico !== false) {
+
+                /** 1   -VERIFICAR A ESPECIALIADE  */
+
+                if (empty($id_especialidade) && !empty($nova_especialidade)) {
+                    /** Criar e Obter a especialidade nova */
+                    $id_especialidade = $this->servicoModel->obterOuCriarEspecialidade($nova_especialidade);
+
+                }
+
+                /** 2  - LINK DO SERVIÇO  */
+
+                $link_servico = $this->gerarLinkServico($nome_servico);
+
+                /**  3- PREPARAR DADOS */
+                $dadosServico = array(
+                    'nome_servico' => $nome_servico,
+                    'descricao_servico' => $descricao_servico,
+                    'preco_base_servico' => $preco_base_servico,
+                    'tempo_estimado_servico' => $tempo_estimado_servico,
+                    'id_especialidade' => $id_especialidade,
+                    'status_servico' => $status_servico,
+                    'link_servico' => $link_servico
+                );
+
+                /** 4- Atualizar o serviço*/
+
+                $id_servico = $this->servicoModel->atualizarServico($id, $dadosServico);
+
+                if($id_servico){
+
+                    if (isset($_FILES['foto_galeria']) && $_FILES['foto_galeria']['error'] == 0) {
+                        $arquivo = $this->uploadFoto($_FILES['foto_galeria'], $link_servico);
+    
+                        if ($arquivo) {
+                            //Inserir na galeria
+                            $this->servicoModel->atualizarFotoGaleria($id, $arquivo, $nome_servico);
+    
+                        } else {
+                            //Definir uma mensagem informando que a foto não pode ser salva
+                        }
+                    }
+
+                }
+
+
+            }
+
+        }
         if (!isset($_SESSION['userTipo']) || $_SESSION['userTipo'] !== 'funcionario') {
 
             header('Location:http://localhost/kioficina/public');
@@ -196,7 +264,7 @@ class ServicosController extends Controller
 
         //Se não houve ID na URL, redirecionar para página de erro (Lista)
         if ($id === null) {
-            header('Location:http://localhost/kioficina/public/servicos/listar');
+            header('Location:http://localhost/kioficina/public/servicos/editar/' . $id);
             exit;
         }
 
@@ -214,7 +282,7 @@ class ServicosController extends Controller
         $dados['servico'] = $servico;
         // var_dump($dados['servico']);
 
-        
+
         $dados['conteudo'] = 'dash/servico/editar';
 
         $this->carregarViews('dash/dashboard', $dados);
@@ -223,13 +291,35 @@ class ServicosController extends Controller
     }
 
     // 4- Método para desativar o serviço
-    public function desativar()
-    {
+    public function desativar($id = null){
 
-        $dados = array();
-        $dados['conteudo'] = 'dash/servico/desativar';
+        if (!isset($_SESSION['userTipo']) || $_SESSION['userTipo'] !== 'funcionario') {
+            http_response_code(400);
+            echo json_encode(["sucesso"=>false,"mensagem"=>"Acesso negado"]);
+            exit;
+        }
 
-        $this->carregarViews('dash/dashboard', $dados);
+        if ($id===null) {
+            http_response_code(400);
+            echo json_encode(["sucesso"=>false,"mensagem"=>"Acesso negado"]);
+            exit;
+        }
+
+        $resultado = $this->servicoModel->desativarServico($id);
+        header('Content-Type: application/json');
+
+        if($resultado){
+            $_SESSION['mensagem'] = 'Serviço desativado com sucesso!';
+            $_SESSION['tipo-msg'] = 'sucesso';
+
+            echo json_encode(['sucesso' => true]);
+
+        }else{
+
+            echo json_encode(['sucesso' => false, 'mensagem' => "Falha ao desativar servico"]);
+            
+
+        }
 
 
     }
@@ -238,17 +328,17 @@ class ServicosController extends Controller
 
 
     /** MÉTODO PARA UPLOAD DA FOTO */
-    private function uploadFoto($file)
+    private function uploadFoto($file, $link_servico)
     {
         $dir = '../public/uploads/servico/';
-        if (file_exists($dir)) {
+        if (!file_exists($dir)) {
             mkdir($dir, 0755, true);
         }
         $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
-        $nome_arquivo = uniqid() . '.' . $ext;
+        $nome_arquivo = $link_servico . '.' . $ext;
 
         if (move_uploaded_file($file['tmp_name'], $dir . $nome_arquivo)) {
-            return 'galeria/' . $nome_arquivo;
+            return 'servico/' . $nome_arquivo;
         }
         return false;
     }
@@ -277,7 +367,7 @@ class ServicosController extends Controller
 
         }
 
-        var_dump($link);
+        // var_dump($link);
         return $link;
     }
 
